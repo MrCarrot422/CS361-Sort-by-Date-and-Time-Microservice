@@ -12,7 +12,7 @@ while True:
         if not os.path.exists('./requests'): # Check if directory exists
             os.mkdir("./requests")
             
-        filename = "./requests/request.txt"
+        filename = "./requests/sort_request.txt"
 
         with open(filename, "w") as fn:
             fn.write("items = [[basketball, 5/16, 5pm], [volleyball, 5/14, 1pm], [spikeball, 5/15, 3pm]]\n") # Sample file
