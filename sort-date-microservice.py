@@ -13,12 +13,12 @@ variables = {}
 while True:
     time.sleep(2)
 
-    with open("./requests/request.txt", "r") as f:
+    with open("./requests/sort_request.txt", "r") as f:
         content = f.read(5)
 
     if content == "items":
         print("Request Received")
-        with open("./requests/request.txt", "r") as text:
+        with open("./requests/sort_request.txt", "r") as text:
             for line in text:
 
                 line = line.strip()
@@ -53,9 +53,9 @@ while True:
         )
         if not os.path.exists('./responses'): # Check if directory exists
             os.mkdir("./responses")
-        file = "./responses/response.txt"
+        file = "./responses/sort_response.txt"
         with open(file, "w") as fn:
             fn.write("items = " + str(items) + "\n")
         print("Response Sent")
-        with open("./requests/request.txt", "w") as f:
+        with open("./requests/sort_request.txt", "w") as f:
             f.truncate(0)
