@@ -12,7 +12,7 @@ The main programs requests data from the Sort by Date and Time Microservice by c
 This microservice uses text files as the ocmmunication pipe. The requesting program writes a request text file into a shared `requests` folder. The microservice checks that folder, reads the request, processes the list by sorting, and writes a response text file into a shared `response` folder.
 ## How to Request Data
 
-Create a text file named `request.txt` inside the `requests` folder.
+Create a text file named `sort_request.txt` inside the `requests` folder.
 
 ### Required parameters:
 - `items`: the list of items that need to be sorted in ascending order of day/time.
@@ -24,7 +24,7 @@ Create a text file named `request.txt` inside the `requests` folder.
 
 ## How to Receive Data
 
-The microservice creates a response text file named `response.txt` inside the `responses` folder.
+The microservice creates a response text file named `sort_response.txt` inside the `responses` folder.
 
 Example response file:
 `items = [['basketball', '2026-5-20', '17:00'], ['volleyball', '2026-5-21', '13:00']]`
