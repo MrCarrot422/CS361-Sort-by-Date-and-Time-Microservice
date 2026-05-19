@@ -22,8 +22,8 @@ while True:
         print("Created test file.")
         time.sleep(5) # Wait a moment for the service to respond
 
-        if os.path.exists("./responses/response.txt"):
-            with open("./responses/response.txt", "r") as fn:
+        if os.path.exists("./responses/sort_response.txt"):
+            with open("./responses/sort_response.txt", "r") as fn:
                 print("Response file located. Viewing contents:\n")
                 print(fn.read())
         
