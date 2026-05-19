@@ -12,28 +12,28 @@ The main programs requests data from the Sort by Date and Time Microservice by c
 This microservice uses text files as the ocmmunication pipe. The requesting program writes a request text file into a shared `requests` folder. The microservice checks that folder, reads the request, processes the list by sorting, and writes a response text file into a shared `response` folder.
 ## How to Request Data
 
-Create a text file named `sort_request.txt` inside the `requests` folder.
+Create a text file named `request.txt` inside the `requests` folder.
 
 ### Required parameters:
 - `items`: the list of items that need to be sorted in ascending order of day/time.
 - `relevant_times`: boolean value. If true, return dates and times that haven't already passed.
 
 ### Example Call:
-`items = [[basketball, 5/16, 5pm], [volleyball, 5/14, 1pm], [spikeball, 5/15, 3pm]]`
+`items = [['basketball', '2026-5-20', '17:00'], ['volleyball', '2026-5-21', '13:00'], ['spikeball', '2026-5-17', '15:00']]`
 `relevant_times = True`
 
 ## How to Receive Data
 
-The microservice creates a response text file named `sort_response.txt` inside the `responses` folder.
+The microservice creates a response text file named `response.txt` inside the `responses` folder.
 
 Example response file:
-`sorted_items = [[spikeball, 5/15, 3pm], [basketball, 5/16, 5pm]]`
+`items = [['basketball', '2026-5-20', '17:00'], ['volleyball', '2026-5-21', '13:00']]`
 
 ## How To Run
 
 Open two terminals from this folder.
 Terminal 1:
-`python sort_by_date_time_microservice.py`
+`python sort-date-microservice.py`
 
 Terminal 2:
 `python program.py`
