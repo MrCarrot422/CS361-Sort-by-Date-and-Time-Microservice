@@ -17,7 +17,7 @@ while True:
         content = f.read(5)
 
     if content == "items":
-
+        print("Request Received")
         with open("./requests/request.txt", "r") as text:
             for line in text:
 
@@ -32,7 +32,6 @@ while True:
 
         items = variables.get("items", [])
         relevant_times = variables.get("relevant_times", False)
-
         # remove past days/times if relevant_times is true
         if relevant_times:
             now = datetime.now()
@@ -57,3 +56,6 @@ while True:
         file = "./responses/response.txt"
         with open(file, "w") as fn:
             fn.write("items = " + str(items) + "\n")
+        print("Response Sent")
+        with open("./requests/request.txt", "w") as f:
+            f.truncate(0)
