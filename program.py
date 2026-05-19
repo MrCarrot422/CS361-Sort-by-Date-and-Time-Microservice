@@ -15,7 +15,8 @@ while True:
         filename = "./requests/sort_request.txt"
 
         with open(filename, "w") as fn:
-            fn.write("items = [[basketball, 5/16, 5pm], [volleyball, 5/14, 1pm], [spikeball, 5/15, 3pm]]\n") # Sample file
+            fn.write("items = [['basketball', '2026-5-20', '17:00'], ['volleyball', '2026-5-21', '13:00'], "
+                     "['spikeball', '2026-5-17', '15:00']]\n") # Sample file
             fn.write("relevant_times = True\n")
     
         print("Created test file.")
